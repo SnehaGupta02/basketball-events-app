@@ -1,40 +1,119 @@
-# 🏀 Basketball Matches App
+# 🏀 Basketball Events Web App
 
-This is a simple full-stack web application that displays a list of upcoming basketball matches using the [Ticketmaster Discovery API](https://developer.ticketmaster.com/products-and-docs/apis/discovery-api/v2/).
+This project displays a list of upcoming **Basketball matches** using the **Ticketmaster Discovery API**. It includes a simple **Flask backend** and a **React frontend** that shows the teams playing, scheduled date and time, venue, and a link to the event.
+
+---
 
 ## 📌 Features
 
-- Fetches live basketball event data from Ticketmaster
-- Displays name, date, venue, city, and link to each match
-- Built with:
-  - **Frontend:** React
-  - **Backend:** Flask (Python)
-  - **API Source:** Ticketmaster
+- 🏟️ Shows upcoming basketball matches in the US  
+- 🕒 Displays scheduled date and time  
+- 🧾 Lists venue and city  
+- 🔗 Links to official event pages  
+- 🔁 Automatically fetches fresh data on page load  
+- 🌐 React-based UI + Flask backend
+
+---
+
+## 📡 API Used
+
+- **API Name:** Ticketmaster Discovery API  
+- **Endpoint:** [`https://app.ticketmaster.com/discovery/v2/events.json`](https://app.ticketmaster.com/discovery/v2/events.json)  
+- **Query Example:**
+  ```
+  https://app.ticketmaster.com/discovery/v2/events.json?keyword=basketball&countryCode=US&apikey=YOUR_API_KEY
+  ```
+
+---
+
+## 🗂️ Project Structure
+
+```
+basketball-events-app/
+├── backend/
+│   └── app.py            # Flask backend to fetch basketball events
+├── frontend/
+│   ├── public/
+│   └── src/
+│       └── App.js        # React component displaying event cards
+├── README.md             # Project documentation
+```
+
+---
 
 ## 🚀 How to Run
 
-### 1. Clone the Repository
+### 🧠 Prerequisites
+
+- Python 3.x  
+- Node.js and npm
+
+---
+
+### ⚙️ Backend Setup (Flask)
 
 ```bash
-git clone https://github.com/your-username/basketball-matches.git
-cd basketball-matches
-###Backend Setup
 cd backend
-pip install -r requirements.txt
-Create a .env file or add your Ticketmaster API key in app.py:
-TICKETMASTER_API_KEY = 'your_ticketmaster_api_key'
-Start the Flask server:
+python3 -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+pip install flask flask-cors requests
 python app.py
-### Frontend Setup (React)
-bash
-Copy
-Edit
-cd basketball-matches
+```
+
+Runs on: `http://127.0.0.1:5000/api/basketball-events`
+
+---
+
+### 💻 Frontend Setup (React)
+
+```bash
+cd frontend
 npm install
 npm start
-🙌 Acknowledgements
-Ticketmaster API
+```
 
-Create React App
+Runs on: `http://localhost:3000`
 
-Flask
+
+
+---
+
+## ✅ Example Output
+
+```json
+{
+  "team1": "Los Angeles Lakers",
+  "team2": "Boston Celtics",
+  "date": "2025-06-12",
+  "time": "19:00",
+  "venue": "Crypto.com Arena",
+  "city": "Los Angeles",
+  "url": "https://www.ticketmaster.com/event/XYZ"
+}
+```
+
+---
+
+## 📝 Assignment Requirements
+
+| Requirement                  | Status |
+|-----------------------------|--------|
+| Basketball or Soccer match  | ✅     |
+| Used a free public API      | ✅     |
+| Displayed teams and date    | ✅     |
+| Included optional backend   | ✅     |
+| Hosted on GitHub            | ✅     |
+
+---
+
+## 🔗 Submission
+
+- **GitHub Repo:** [https://github.com/SnehaGupta02/basketball-events-app](https://github.com/SnehaGupta02/basketball-events-app)
+- **API Used:** [Ticketmaster Discovery API](https://app.ticketmaster.com/discovery/v2/events.json)
+
+---
+
+## 👩‍💻 Author
+
+**Sneha Gupta**   
+Made with ❤️ for the internship assignment.
